@@ -100,6 +100,12 @@ This example sets the quota for the site.
 > [!NOTE] 
 > If Site Collection Storage Management is enabled for the tenant, you will not be able to set quota and will have a generic error returned. To workaround this issue, set the site collection storage management to "manual" temporarily, set your quotas and then set the site collection storage management setting back to its original setting.  
 
+### -----------------------EXAMPLE 6-----------------------------
+```
+Set-SPOSite -Identity https://contoso.sharepoint.com -DenyAddAndCustomizePages 0
+```
+
+Example 6 enables Custom Scripts for the site collection.
 
 ## PARAMETERS
 
@@ -173,9 +179,12 @@ Accept wildcard characters: False
 ```
 
 ### -DenyAddAndCustomizePages
-Determines whether the Add And Customize Pages right is denied on the site collection.
+Determines whether the Add And Customize Pages right is denied on the site collection. This switch can also be used to enable Custom Scripts on the site collection.
+
 For more information about permission levels, see User permissions and permission levels in SharePoint.
 
+> [!NOTE] 
+> Unlike the switch for enabling Custom Scripting in Administration Portal, this switch takes effect instantly.
 
 ```yaml
 Type: Boolean
